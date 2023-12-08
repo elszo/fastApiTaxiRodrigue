@@ -27,6 +27,10 @@ class Predictor:
 model_path = "./models/taxi.model"
 predictor = Predictor(model_path)
 
+@app.get("/")
+def root():
+    return {"message": "Hello!"}
+
 @app.post("/predict")
 async def predict(item: Item):
 
